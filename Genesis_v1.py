@@ -48,7 +48,7 @@ class GenesisV1(nn.Module):
         
         # Initialize or fetch the manifold state
         if hidden is None:
-            node_states = self.manifold_nodes.unsqueeze(0).expand(batch_size, -1, -1)
+            node_states = self.get_manifold_state(batch_size)
         else:
             node_states = hidden
         
